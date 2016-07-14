@@ -1,21 +1,22 @@
-class MessageInABottle < Sinatra::Base
+class BottleMessageApp < Sinatra::Base
 
-@@locations = [{"name" => "Search West Beach", "location" => "west"}, {"name" => "Search East Beach", "location" => "east"}]
+	@@counter = 1
 
-#index
-get '/beach?location=west' do 
-	@team_members = @@team_members
-	erb :index
-end
+	get '/' do
+		erb :index
+	end
 
-#index
-get '/beach?location=west' do 
-	@team_members = @@team_members
-	erb :index
-end
-
-#index
-get '/beach' do 
-	@team_members = @@team_members
-	erb :index
+	get '/beach' do
+		if @@counter % 5 == 0
+			@message = "Ouch! There was a crab in the bottle."
+		else
+			messages = {
+				'west' => "It's totally awesome to write messages in your used bottles at the end of a spring break rager!", 
+				'east' => 'Argh, the Island of Tortuga runs short of turtles.'
+			} 
+			@message = messages[params['location']]
+		end
+		@@counter += 1
+		erb :beach
+	end 
 end

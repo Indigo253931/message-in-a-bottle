@@ -2,5 +2,5 @@ require 'rubygems'
 require 'bundler'
 Bundler.require
 
-require './high_five_tracker'
-run HighFiveTracker
+require './bottle_message'
+run MessageInABottle
