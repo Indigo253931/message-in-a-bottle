@@ -1,4 +1,4 @@
-class BottleMessageApp < Sinatra::Base
+class MessageInABottle < Sinatra::Base
 
 	@@counter = 1
 
