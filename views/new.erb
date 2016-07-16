@@ -1,9 +1,11 @@
-<h2>The message is:</h2>
+<% if @counter == 5 %>
+	<%= "Ouch! There was a crab in the bottle." %>
 
-<p>
-	<%= @message %> 
-</p>
+<% elsif @location == "east" %>
+	<%= "Argh, the Island of Tortuga runs short of turtles." %>
 
-<a href="/beach?location=west">Search West Beach</a>
-
-<a href="/beach?location=east">Search East Beach</a>
+<% elsif @location == "west" %>
+	<%= "It's totally awesome to write messages in your used bottles at the end of a spring break rager!" %>
+<% else %>
+	<%= "No location" %>
+<% end %>

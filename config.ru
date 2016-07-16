@@ -2,5 +2,5 @@ require 'rubygems'
 require 'bundler'
 Bundler.require
 
-require './bottle_message'
+require './message_in_a_bottle'
 run MessageInABottle
